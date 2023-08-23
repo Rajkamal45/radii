@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensa Brands</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Mensa Brands</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="data-container">
+        <!-- <h1>Form Data Display</h1> -->
+        <ul id="data-list"></ul>
+    </div>
+    
+    <script>
+        const dataList = document.getElementById('data-list');
+    
+        // Fetch and display data from the server
+        fetch('/display-data')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.name}: ${item.email} - ${item.message}`;
+                    dataList.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Style</h1>
+            <p>Explore a world of fashion and elegance</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </section>
+    <section class="featured">
+        <h2>Featured Products</h2>
+        <div class="product-card">Product 1</div>
+        <div class="product-card">Product 2</div>
+        <div class="product-card">Product 3</div>
+    </section>
+    <!-- ... Previous HTML ... -->
+
+<section class="gallery">
+  <h2>Image Gallery</h2>
+  <div class="image-grid">
+      <img src="gallery1.jpg" alt="Gallery Image 1">
+      <img src="gallery2.jpg" alt="Gallery Image 2">
+      <img src="gallery3.jpg" alt="Gallery Image 3">
+      <!-- Add more images here -->
+  </div>
+</section>
+
+<!-- ... Previous HTML ... -->
+
+<section class="contact">
+  <h2>Contact Us</h2>
+  <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+  </form>
+</section>
+
+<section class="image-slider">
+  <div class="slider">
+      <img src="slider1.jpg" alt="Slider Image 1">
+      <img src="slider2.jpg" alt="Slider Image 2">
+      <img src="slider3.jpg" alt="Slider Image 3">
+      <!-- Add more slider images here -->
+  </div>
+</section>
+
+<!-- ... Previous HTML ... -->
+
+<section class="featured-products">
+  <h2>Featured Products</h2>
+  <div class="product-slider">
+      <div class="slide">
+          <div class="product-card">Product 1</div>
+      </div>
+      <div class="slide">
+          <div class="product-card">Product 2</div>
+      </div>
+      <div class="slide">
+          <div class="product-card">Product 3</div>
+      </div>
+      <!-- Add more slides with product cards here -->
+  </div>
+</section>
+
+
+
+    <footer>
+        <p>&copy; 2023 Mensa Brands. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll-to-Top Button -->
+<div id="scroll-to-top" class="scroll-to-top">
+  <i class="fas fa-arrow-up"></i>
+</div>
+    <script src="scripts.js"></script>
+    <script src="server.js"></script>
+
+</body>
+</html>
+
+
